@@ -2,6 +2,16 @@
 require 'rubygems'
 require 'em-websocket'
 
+if ARGV[0].nil?
+  puts "pid file path not found !!"
+  exit 1
+else
+  pidfile = ARGV[0]
+end
+
+Process.daemon
+File.open( pidfile, "w") {|pid| pid.write Process.pid }
+
 #コネクションはDBに格納する#TODO
 connections = []
 #過去ログもDBに保存する#TODO
@@ -20,6 +30,7 @@ EventMachine::WebSocket.start(:host => "localhost", :port => 8080) do |ws|
   end
 
   ws.onmessage do |msg|
+    p connections
     p msg
     puts "on message"
     prevMsgs.push(msg)
