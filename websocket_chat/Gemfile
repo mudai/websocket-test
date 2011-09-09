@@ -9,6 +9,7 @@ gem 'mysql2', '~> 0.2.6'
 
 gem 'em-websocket'
 gem 'jquery-rails'
+gem 'haml'
 # Use unicorn as the web server
 # gem 'unicorn'
 
