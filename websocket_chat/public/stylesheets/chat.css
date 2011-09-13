@@ -1,4 +1,4 @@
-#contactForm input[type="text"] {
+#chatForm input[type="text"] {
   padding: 5px;
   border: 1px solid #999;
   -webkit-border-radius: 5px;
@@ -12,7 +12,7 @@
   background: linear-gradient(top, #e3e3e3, #fff);
 }
 
-#contactForm input[type="text"]:focus {
+#chatForm input[type="text"]:focus {
   border: 1px solid #f33;
   background: -webkit-gradient(linear, left top, left bottom, from(#fdd), to(#fff));
   background: -webkit-linear-gradient(top, #fdd, #fff);
@@ -21,19 +21,19 @@
   background: linear-gradient(top, #fdd, #fff);
 }
 
-#contactForm input[id="name"] {
+#chatForm input[id="name"] {
   width: 100px;
 }
 
-#contactForm input[id="message"] {
+#chatForm input[id="message"] {
   width: 400px;
 }
 
-#contactForm input[type="text"]:disabled {
+#chatForm input[type="text"]:disabled {
   background: #ccc;
 }
 
-#contactForm input[type="submit"] {
+#chatForm input[type="submit"] {
   padding: 5px 10px 5px 10px;
   border: 1px solid #111;
   -webkit-border-radius: 5px;
@@ -57,8 +57,8 @@
   cursor: pointer;
 }
 
-#contactForm input[type="submit"]:hover,
-#contactForm input[type="submit"]:focus {
+#chatForm input[type="submit"]:hover,
+#chatForm input[type="submit"]:focus {
   border: 1px solid #100;
 
   background: -webkit-gradient(linear, left top, left bottom, from(#800), to(#300));

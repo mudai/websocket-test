@@ -1,31 +1,30 @@
-!!!
-%html
-  %head
-    :javascript
-      $(function() {
-          var data = {};
-          ws = new WebSocket("ws://localhost:8080");
-          ws.onopen = function() {
-              ws.send('hi');
-          };
-          ws.onmessage = function(e) {
-            var div = document.createElement("div");
-            var line = JSON.parse(e.data);
-            div.innerHTML = line.name + ":" + line.message;
-            $("#holder").append(div);
-          };
-          $('#submit').click(function(){
-            var line = {}
-            line.name = $("#name").val();
-            line.message = $("#message").val();
-            ws.send(JSON.stringify(line));
-          });
+- content_for :css do
+  = stylesheet_link_tag "chat"
+:javascript
+  $(function() {
+      var data = {};
+      ws = new WebSocket("ws://localhost:8080");
+      ws.onopen = function() {
+          ws.send('hi');
+      };
+      ws.onmessage = function(e) {
+        var div = document.createElement("div");
+        var line = JSON.parse(e.data);
+        div.innerHTML = line.name + ":" + line.message;
+        $("#chat").append(div);
+      };
+      $('#submit').click(function(){
+        var line = {}
+        line.name = $("#name").val();
+        line.message = $("#message").val();
+        ws.send(JSON.stringify(line));
       });
-  %body
-    #sender
-      %input#name{:type => "text", :value => "text"}/
-      %input#message{:type => "text", :value => "text"}/
-    #submit
-      送信
-    %h3 Messages
-    #holder
+  });
+#chatForm.lv2
+  %fieldset
+    %legend chat
+    %input#name{:name => "name", :type => "text"}/
+    %input#message{:name => "message", :type => "text"}/
+    %input{:type => "submit", :value => "send"}/
+    %hr/
+    #chat
