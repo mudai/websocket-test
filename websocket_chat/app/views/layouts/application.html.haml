@@ -8,4 +8,15 @@
     = csrf_meta_tag
     = yield :css
   %body
-    = yield
+    %header
+      = yield :header
+      header
+    %container
+      %section
+        = yield #section区画　articleはsectionの中に記述する
+      %nav
+        = yield :nav
+        nav
+    %footer
+      = yield :footer
+      footer

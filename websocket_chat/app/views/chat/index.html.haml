@@ -11,9 +11,9 @@
         var div = document.createElement("div");
         var line = JSON.parse(e.data);
         div.innerHTML = line.name + ":" + line.message;
-        $("#chat").append(div);
+        $("div#chat").append(div);
       };
-      $('#submit').click(function(){
+      $("input[type='submit']").click(function(){
         var line = {}
         line.name = $("#name").val();
         line.message = $("#message").val();

@@ -1,0 +1,27 @@
+header {
+  width: 850;
+  background: red;
+}
+footer {
+  width: 850;
+  background: blue;
+}
+container  {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+}
+nav {
+  width: 200px;
+  background: #EEE;
+  min-height: 500px;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+}
+section  {
+  width: 650px;
+  background: #999;
+  min-height: 300px;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+}
