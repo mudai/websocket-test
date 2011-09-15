@@ -10,7 +10,7 @@
   %body
     %header
       = yield :header
-      header
+      %h1 header
     %container
       %section
         = yield #section区画　articleはsectionの中に記述する
@@ -19,4 +19,4 @@
         nav
     %footer
       = yield :footer
-      footer
+      %h3 footer

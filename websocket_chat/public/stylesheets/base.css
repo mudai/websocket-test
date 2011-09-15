@@ -1,9 +1,16 @@
+body {
+  background:#000 url(http://saltworks.jp/common/css/images/top_back.gif) repeat left top;
+  width: 800px;
+  margin: 0 auto;
+  text-align: left
+}
 header {
-  width: 850;
-  background: red;
+  width: 800px;
+  height: 100px;
+  background-image: url(http://header.cute.bz/wp-content/uploads/heli01p02.jpg);
 }
 footer {
-  width: 850;
+  width: 800px;
   background: blue;
 }
 container  {
@@ -19,9 +26,9 @@ nav {
   -moz-box-ordinal-group: 2;
 }
 section  {
-  width: 650px;
+  width: 600px;
   background: #999;
-  min-height: 300px;
+  min-height: 500px;
   -webkit-box-ordinal-group: 1;
   -moz-box-ordinal-group: 1;
 }

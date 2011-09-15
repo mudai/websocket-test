@@ -9,6 +9,7 @@
 /doc/plugins/
 /doc/spec.html
 /log/*.log
+/log/*.pid
 /spec/reports/
 /tmp/
 /vendor/bundle/
