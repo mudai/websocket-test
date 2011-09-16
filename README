@@ -1,4 +1,14 @@
 README
 
-とりあえず追加
-コミットテスト
+websocketを使ったrailsアプリ
+chatができる
+http://localhost:3000/chat
+
+websocketサーバーの起動
+rake websocket:start
+
+websocketサーバーの停止
+rake websocket:stop
+
+websocketサーバーの再起動
+rake websocket:restart
