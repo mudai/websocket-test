@@ -1,0 +1,15 @@
+# config/config.yml
+production:
+  websocket:
+    hostname: "localhost"
+    port: 8080
+
+development:
+  websocket:
+    hostname: "localhost"
+    port: 8080
+
+test:
+  websocket:
+    hostname: "localhost"
+    port: 8080

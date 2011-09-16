@@ -19,7 +19,8 @@ prevMsgs = []
 
 #:hostはサーバーのdomain
 #production環境にする場合は:debug => falseとする
-EventMachine::WebSocket.start(:host => "localhost", :port => 8080) do |ws|
+config = configatron.websocket.to_hash
+EventMachine::WebSocket.start(config) do |ws|
   puts "server start"
   ws.onopen do
     puts "on open"

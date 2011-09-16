@@ -31,6 +31,8 @@ GEM
     addressable (2.2.6)
     arel (2.0.10)
     builder (2.1.2)
+    configatron (2.8.2)
+      yamler (>= 0.1.0)
     em-websocket (0.3.1)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
@@ -76,11 +78,13 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
+    yamler (0.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  configatron
   em-websocket
   haml
   jquery-rails
