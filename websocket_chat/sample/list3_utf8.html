@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>マウスで描画</title>
+<style>
+body{
+  background-color:#c0c0c0;
+}
+#cvs{
+  position:absolute;  /*絶対座標で位置を指定*/
+  top:150px;          /*ブラウザ上端から150px*/
+  left:50px;          /*ブラウザ左端から50px*/
+  background-color:#ffffff;
+  border:#000000 2px solid;
+}
+</style>
+<script>
+var d_flg = false;  //描画判定フラグの初期値
+var start_x = 0;    //マウスX座標の初期値
+var start_y = 0;    //マウスY座標の初期値
+
+function init(){
+  var cvs = document.getElementById("cvs");
+  //イベント処理を追加
+  cvs.addEventListener("mousedown", m_down, true);
+  cvs.addEventListener("mousemove", draw, true);
+  cvs.addEventListener("mouseup", m_up, true);
+}
+
+function m_down(e){
+  d_flg = true;  //描画中
+  start_x = e.clientX - 50;  //描画を開始する位置
+  start_y = e.clientY - 150;
+}
+
+function draw(e){
+  var to_x = e.clientX  - 50;  //マウスの現在位置
+  var to_y = e.clientY - 150;
+  if(d_flg){  //描画中なら以下の処理を実行
+    var fh
+      = document.getElementById("cvs").getContext("2d");
+    fh.beginPath();
+    fh.lineWidth = 5;
+    fh.strokeStyle = "#000000";
+    fh.moveTo(start_x,start_y);
+    fh.lineTo(to_x, to_y);
+    fh.stroke();
+    start_x = to_x;  //現在位置を描画開始位置にする
+    start_y = to_y;
+  }
+  document.getElementById("pos").innerHTML =
+    "X:" + to_x + " / Y:" + to_y;
+}
+
+function m_up(){
+  d_flg = false;  //描画終了
+}
+</script>
+</head>
+<body onload="init()">
+<h1>マウスで描画</h1>
+マウスの現在座標
+<div id="pos"></div>
+<canvas id="cvs" width="500" height="500"></canvas>
+</body></html>
