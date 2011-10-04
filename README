@@ -12,3 +12,6 @@ rake websocket:stop
 
 websocketサーバーの再起動
 rake websocket:restart
+
+
+pushテスト
